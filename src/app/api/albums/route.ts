@@ -2,7 +2,7 @@ import { prisma } from "@/db";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
-  try {
+  // try {
     const body = await req.formData();
     const albumLink = body.get('albumLink')
 
@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
   
     return NextResponse.json({ message: "Thank you! We'll add your album shortly.", success: true, data: { albumLink } })
 
-  } catch(error) {
-    return NextResponse.json({ message: 'Please provide the album link', success: false }, { status: 400 })
-  }
+  // } catch(error) {
+  //   return NextResponse.json({ message: 'Please provide the album link', success: false }, { status: 400 })
+  // }
 }
